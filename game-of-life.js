@@ -16,7 +16,6 @@ const neighboursCheck = (row, col) => {
 
 	const topRow = initialArray[row - 1];
 	const bottomRow = initialArray[row + 1];
-	console.log(row, col, topRow && topRow[col + 1]);
 
 	//top left position
 	if (topRow && topRow[col - 1] === 1) {
@@ -55,7 +54,7 @@ const neighboursCheck = (row, col) => {
 };
 
 //game start function
-const GameStart = () => {
+const gameStart = () => {
 	//cloning the first initial array in to a new one
 	const clone = JSON.parse(JSON.stringify(initialArray));
 	//itterating through rows - y axis
@@ -91,5 +90,5 @@ const GameStart = () => {
 
 //interval function that runs the game
 setInterval(() => {
-	document.body.innerHTML = JSON.stringify(GameStart());
+	document.body.innerHTML = JSON.stringify(gameStart());
 }, 200);
